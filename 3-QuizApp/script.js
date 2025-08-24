@@ -107,7 +107,8 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}`;
+    if(score == questions.length) questionElement.innerHTML = `Excellent💥, You scored ${score} out of ${questions.length}!`;
+    else questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextElement.innerHTML = "Play Again";
     nextElement.addEventListener("click",StartQuiz)
     nextElement.style.display = "block";
